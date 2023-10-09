@@ -11,6 +11,7 @@ import Kingfisher
 struct ProductCell: View {
     
     var product = ProductData()
+    @State var count = 0
     
     var body: some View {
         VStack {
@@ -65,17 +66,17 @@ struct ProductCell: View {
         HStack {
             
             Button {
-                
+                increaseCounter()
             } label: {
                 customQuantityButton(imageName: "plus")
             }
             
-            Text("0")
+            Text(count.description)
                 .frame(width: 25,height: 25)
             
             
             Button {
-                
+                decreaseCounter()
             } label: {
                 customQuantityButton(imageName: "minus")
             }
@@ -133,6 +134,17 @@ struct ProductCell: View {
             Rectangle()
                 .stroke(Color.black, lineWidth: 1)
                 .frame(width: CGFloat(width), height: CGFloat(height))
+        }
+    }
+    
+    
+    func increaseCounter(){
+        count += 1
+    }
+    
+    func decreaseCounter(){
+        if count != 0 {
+            count -= 1
         }
     }
 }

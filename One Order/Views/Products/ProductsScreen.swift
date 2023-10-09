@@ -48,11 +48,9 @@ struct ProductsScreen: View {
     
     var productList: some View {
         ScrollView{
-            
             ForEach(viewModel.mProducts,id: \.id) { position in
                 ProductCell(product: position)
             }
-            
         }
     }
 }
