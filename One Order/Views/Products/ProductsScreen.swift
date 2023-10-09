@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ProductsScreen: View {
+    
+    @StateObject var viewModel = ProductsViewModel()
+    
+    
     var body: some View {
         VStack{
             headerToolbar
@@ -40,8 +44,8 @@ struct ProductsScreen: View {
     var productList: some View {
         ScrollView{
             
-            ForEach(0..<6) { product in
-                ProductCell()
+            ForEach(viewModel.mProducts,id: \.id) { position in
+                ProductCell(product: position)
             }
             
         }

@@ -20,6 +20,8 @@
 		150AC2512AD47F1C002BC419 /* ProductData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AC2502AD47F1C002BC419 /* ProductData.swift */; };
 		150AC2532AD480A8002BC419 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AC2522AD480A8002BC419 /* APIManager.swift */; };
 		150AC25A2AD48425002BC419 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AC2592AD48425002BC419 /* ProductCell.swift */; };
+		15D8C8C72AD49D700004D910 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8C8C62AD49D700004D910 /* ProductsViewModel.swift */; };
+		15D8C8CA2AD4A1D50004D910 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 15D8C8C92AD4A1D50004D910 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,7 @@
 		150AC2502AD47F1C002BC419 /* ProductData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductData.swift; sourceTree = "<group>"; };
 		150AC2522AD480A8002BC419 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		150AC2592AD48425002BC419 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		15D8C8C62AD49D700004D910 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15D8C8CA2AD4A1D50004D910 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +193,7 @@
 			children = (
 				150AC2562AD483F1002BC419 /* cell */,
 				150AC21C2AD47BF5002BC419 /* ProductsScreen.swift */,
+				15D8C8C62AD49D700004D910 /* ProductsViewModel.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -225,6 +230,9 @@
 			dependencies = (
 			);
 			name = "One Order";
+			packageProductDependencies = (
+				15D8C8C92AD4A1D50004D910 /* Kingfisher */,
+			);
 			productName = "One Order";
 			productReference = 150AC2172AD47BF5002BC419 /* One Order.app */;
 			productType = "com.apple.product-type.application";
@@ -297,6 +305,9 @@
 				Base,
 			);
 			mainGroup = 150AC20E2AD47BF5002BC419;
+			packageReferences = (
+				15D8C8C82AD4A1D50004D910 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 150AC2182AD47BF5002BC419 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,6 +355,7 @@
 				150AC24A2AD47CC1002BC419 /* ApiService.swift in Sources */,
 				150AC2482AD47CAF002BC419 /* ApiError.swift in Sources */,
 				150AC2532AD480A8002BC419 /* APIManager.swift in Sources */,
+				15D8C8C72AD49D700004D910 /* ProductsViewModel.swift in Sources */,
 				150AC25A2AD48425002BC419 /* ProductCell.swift in Sources */,
 				150AC24E2AD47E70002BC419 /* ProductRepo.swift in Sources */,
 				150AC2512AD47F1C002BC419 /* ProductData.swift in Sources */,
@@ -671,6 +683,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		15D8C8C82AD4A1D50004D910 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		15D8C8C92AD4A1D50004D910 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15D8C8C82AD4A1D50004D910 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 150AC20F2AD47BF5002BC419 /* Project object */;
 }

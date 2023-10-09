@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProductCell: View {
+    
+    var product = ProductData()
     
     var body: some View {
         VStack {
@@ -30,12 +33,12 @@ struct ProductCell: View {
     
     var productImgAndPrice: some View {
         ZStack(alignment:.topTrailing) {
-            Image("productImg")
+            KFImage(URL(string: product.image)!)
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity,maxHeight: 150,alignment: .top)
             
-            Text("223 EGP")
+            Text("\(product.price.description) EGP")
                 .font(.system(size: 12))
                 .padding()
                 .foregroundColor(Color.white)
@@ -47,7 +50,7 @@ struct ProductCell: View {
     
     var productTitleAndQuantity: some View {
         HStack {
-            Text("Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops")
+            Text(product.description)
                 .font(.system(size: 12))
                 .padding(.leading)
                 .padding(.trailing)
