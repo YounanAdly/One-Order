@@ -19,6 +19,11 @@ struct ProductsScreen: View {
             
             Spacer()
         }
+        .alert(isPresented: $viewModel.isAlert) {
+            Alert(title: Text("Error"),
+                  message: Text(viewModel.errorMessage ?? "Somthing went wrong"),
+                  dismissButton: .default(Text("OK")))
+        }
     }
     
     var headerToolbar: some View {
