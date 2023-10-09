@@ -14,6 +14,8 @@
 		150AC22C2AD47BF7002BC419 /* One_OrderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AC22B2AD47BF7002BC419 /* One_OrderTests.swift */; };
 		150AC2362AD47BF8002BC419 /* One_OrderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AC2352AD47BF8002BC419 /* One_OrderUITests.swift */; };
 		150AC2382AD47BF8002BC419 /* One_OrderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AC2372AD47BF8002BC419 /* One_OrderUITestsLaunchTests.swift */; };
+		150AC2482AD47CAF002BC419 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AC2472AD47CAF002BC419 /* ApiError.swift */; };
+		150AC24A2AD47CC1002BC419 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AC2492AD47CC1002BC419 /* ApiService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		150AC2312AD47BF8002BC419 /* One OrderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "One OrderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		150AC2352AD47BF8002BC419 /* One_OrderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = One_OrderUITests.swift; sourceTree = "<group>"; };
 		150AC2372AD47BF8002BC419 /* One_OrderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = One_OrderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		150AC2472AD47CAF002BC419 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		150AC2492AD47CC1002BC419 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +98,9 @@
 		150AC2192AD47BF5002BC419 /* One Order */ = {
 			isa = PBXGroup;
 			children = (
+				150AC2442AD47C75002BC419 /* Network */,
+				150AC2452AD47C7B002BC419 /* Views */,
 				150AC21A2AD47BF5002BC419 /* One_OrderApp.swift */,
-				150AC21C2AD47BF5002BC419 /* ContentView.swift */,
 				150AC21E2AD47BF7002BC419 /* Assets.xcassets */,
 				150AC2202AD47BF7002BC419 /* Preview Content */,
 			);
@@ -125,6 +130,31 @@
 				150AC2372AD47BF8002BC419 /* One_OrderUITestsLaunchTests.swift */,
 			);
 			path = "One OrderUITests";
+			sourceTree = "<group>";
+		};
+		150AC2442AD47C75002BC419 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				150AC2462AD47C88002BC419 /* SharedService */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		150AC2452AD47C7B002BC419 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				150AC21C2AD47BF5002BC419 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		150AC2462AD47C88002BC419 /* SharedService */ = {
+			isa = PBXGroup;
+			children = (
+				150AC2472AD47CAF002BC419 /* ApiError.swift */,
+				150AC2492AD47CC1002BC419 /* ApiService.swift */,
+			);
+			path = SharedService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +289,8 @@
 			files = (
 				150AC21D2AD47BF5002BC419 /* ContentView.swift in Sources */,
 				150AC21B2AD47BF5002BC419 /* One_OrderApp.swift in Sources */,
+				150AC24A2AD47CC1002BC419 /* ApiService.swift in Sources */,
+				150AC2482AD47CAF002BC419 /* ApiError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
