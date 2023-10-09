@@ -11,7 +11,7 @@ import SwiftUI
 struct One_OrderApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ProductsScreen()
         }
     }
 }
