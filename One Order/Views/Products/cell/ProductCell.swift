@@ -92,7 +92,7 @@ struct ProductCell: View {
     var addToCartButton: some View {
         HStack(alignment: .center) {
             Button {
-                vm.addToCart(product: product)
+                vm.addToCart(product: product,quantity: count)
             } label: {
                 addCartView
             }

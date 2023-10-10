@@ -45,21 +45,39 @@ class ProductsViewModel : ObservableObject {
     
     
     
-    func addToCart(product: ProductData) {
-        addCartValidation(product: product)
+    func addToCart(product: ProductData,quantity: Int) {
+        addCartValidation(product: product,quantity: quantity)
     }
     
     
-    func addCartValidation(product: ProductData) {
+    func addCartValidation(product: ProductData,quantity: Int) {
+        
         if !productsInCart.contains(where: { $0.id == product.id }) {
-            productsInCart.append(product)
+            
+            updateQuantityBeforAdd(product: product, quantity: quantity)
             showMessage("Product added to cart.")
+            
         } else {
             showMessage("Product is already in the cart.")
         }
     }
     
     
+    func updateQuantityBeforAdd(product: ProductData,quantity: Int) {
+        var productCopy = product
+        productCopy.quantity = quantity
+        productsInCart.append(productCopy)
+    }
+    
+    func calculateTotalPrice() -> Double {
+        var totalPrice = 0.0
+        for product in productsInCart {
+            if let quantity = product.quantity {
+                totalPrice += Double(quantity) * product.price
+            }
+        }
+        return totalPrice
+    }
     
     /// UI Update
     

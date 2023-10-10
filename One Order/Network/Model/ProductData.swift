@@ -15,6 +15,7 @@ struct ProductData: Codable, Identifiable {
     let category: String
     let image: String
     let rating: ProductRating
+    var quantity: Int?
     
     
     init(){
@@ -25,6 +26,7 @@ struct ProductData: Codable, Identifiable {
         self.category = "Product Category"
         self.image = ""
         self.rating = ProductRating()
+        self.quantity = 1
     }
 }
 

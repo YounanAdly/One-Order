@@ -10,24 +10,26 @@ import SwiftUI
 struct ProductsScreen: View {
     
     @StateObject var viewModel = ProductsViewModel()
-    
+    @State var openCart: Bool = false
     
     var body: some View {
-        VStack{
-            headerToolbar
-            productList
-            
-            Spacer()
-        }
-        .alert(isPresented: $viewModel.isAlert) {
-            Alert(title: Text("Error"),
-                  message: Text(viewModel.errorMessage ?? "Somthing went wrong"),
-                  dismissButton: .default(Text("OK")))
-        }
-        .alert(isPresented: $viewModel.isProductAdded) {
-            Alert(title: Text("Add Product"),
-                  message: Text(viewModel.addMsg),
-                  dismissButton: .default(Text("OK")))
+        NavigationView {
+            VStack{
+                headerToolbar
+                productList
+                
+                Spacer()
+            }
+            .alert(isPresented: $viewModel.isAlert) {
+                Alert(title: Text("Error"),
+                      message: Text(viewModel.errorMessage ?? "Somthing went wrong"),
+                      dismissButton: .default(Text("OK")))
+            }
+            .alert(isPresented: $viewModel.isProductAdded) {
+                Alert(title: Text("Add Product"),
+                      message: Text(viewModel.addMsg),
+                      dismissButton: .default(Text("OK")))
+            }
         }
     }
     
@@ -37,12 +39,13 @@ struct ProductsScreen: View {
                 .frame(maxWidth: .infinity, alignment: .top)
             
             
-            Button {
-                
-            } label: {
+            
+            
+            NavigationLink(destination: CartScreen(viewModel: viewModel)) {
                 Image(systemName: "cart")
+                    .foregroundColor(Color.black)
                     .padding(.trailing,22)
-                    .frame(width: 12,height: 12,
+                    .frame(width: 25,height: 25,
                            alignment: .topTrailing)
             }
             

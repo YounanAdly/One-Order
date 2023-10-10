@@ -22,6 +22,8 @@
 		150AC25A2AD48425002BC419 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AC2592AD48425002BC419 /* ProductCell.swift */; };
 		155A4B082AD5E9A7007736AE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A4B072AD5E9A7007736AE /* HTTPMethod.swift */; };
 		155A4B0B2AD5EA1E007736AE /* ProductsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A4B0A2AD5EA1E007736AE /* ProductsAPIRequest.swift */; };
+		155A4B0D2AD5F719007736AE /* CartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A4B0C2AD5F719007736AE /* CartScreen.swift */; };
+		155A4B0F2AD601D9007736AE /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A4B0E2AD601D9007736AE /* CartCell.swift */; };
 		15BFF6AD2AD534BD00C4DA1F /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BFF6AC2AD534BD00C4DA1F /* APIRequest.swift */; };
 		15D8C8C72AD49D700004D910 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8C8C62AD49D700004D910 /* ProductsViewModel.swift */; };
 		15D8C8CA2AD4A1D50004D910 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 15D8C8C92AD4A1D50004D910 /* Kingfisher */; };
@@ -63,6 +65,8 @@
 		150AC2592AD48425002BC419 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		155A4B072AD5E9A7007736AE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		155A4B0A2AD5EA1E007736AE /* ProductsAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsAPIRequest.swift; sourceTree = "<group>"; };
+		155A4B0C2AD5F719007736AE /* CartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartScreen.swift; sourceTree = "<group>"; };
+		155A4B0E2AD601D9007736AE /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		15BFF6AC2AD534BD00C4DA1F /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		15D8C8C62AD49D700004D910 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,6 +206,7 @@
 			children = (
 				150AC2562AD483F1002BC419 /* cell */,
 				150AC21C2AD47BF5002BC419 /* ProductsScreen.swift */,
+				155A4B0C2AD5F719007736AE /* CartScreen.swift */,
 				15D8C8C62AD49D700004D910 /* ProductsViewModel.swift */,
 			);
 			path = Products;
@@ -219,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				150AC2592AD48425002BC419 /* ProductCell.swift */,
+				155A4B0E2AD601D9007736AE /* CartCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				150AC21D2AD47BF5002BC419 /* ProductsScreen.swift in Sources */,
+				155A4B0F2AD601D9007736AE /* CartCell.swift in Sources */,
 				150AC21B2AD47BF5002BC419 /* One_OrderApp.swift in Sources */,
 				150AC24A2AD47CC1002BC419 /* ApiService.swift in Sources */,
 				155A4B082AD5E9A7007736AE /* HTTPMethod.swift in Sources */,
@@ -376,6 +383,7 @@
 				155A4B0B2AD5EA1E007736AE /* ProductsAPIRequest.swift in Sources */,
 				15D8C8C72AD49D700004D910 /* ProductsViewModel.swift in Sources */,
 				150AC25A2AD48425002BC419 /* ProductCell.swift in Sources */,
+				155A4B0D2AD5F719007736AE /* CartScreen.swift in Sources */,
 				150AC24E2AD47E70002BC419 /* ProductRepo.swift in Sources */,
 				15BFF6AD2AD534BD00C4DA1F /* APIRequest.swift in Sources */,
 				150AC2512AD47F1C002BC419 /* ProductData.swift in Sources */,
@@ -465,7 +473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -519,7 +527,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
