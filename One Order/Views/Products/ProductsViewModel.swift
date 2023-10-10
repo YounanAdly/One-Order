@@ -42,7 +42,15 @@ class ProductsViewModel : ObservableObject {
             }
         }
     }
+    
+    
+    
     func addToCart(product: ProductData) {
+        addCartValidation(product: product)
+    }
+    
+    
+    func addCartValidation(product: ProductData) {
         if !productsInCart.contains(where: { $0.id == product.id }) {
             productsInCart.append(product)
             showMessage("Product added to cart.")
@@ -50,6 +58,10 @@ class ProductsViewModel : ObservableObject {
             showMessage("Product is already in the cart.")
         }
     }
+    
+    
+    
+    /// UI Update
     
     func showMessage(_ message: String) {
         isProductAdded = true
