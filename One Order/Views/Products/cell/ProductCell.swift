@@ -10,8 +10,9 @@ import Kingfisher
 
 struct ProductCell: View {
     
+    var vm = ProductsViewModel()
     var product = ProductData()
-    @State var count = 0
+    @State var count = 1
     
     var body: some View {
         VStack {
@@ -34,7 +35,7 @@ struct ProductCell: View {
     
     var productImgAndPrice: some View {
         ZStack(alignment:.topTrailing) {
-            KFImage(URL(string: product.image)!)
+            KFImage(URL(string: product.image) ?? URL(string: ""))
                 .resizable()
                 .scaledToFit()
                 .frame(maxWidth: .infinity,maxHeight: 150,alignment: .top)
@@ -91,7 +92,7 @@ struct ProductCell: View {
     var addToCartButton: some View {
         HStack(alignment: .center) {
             Button {
-                
+                vm.addToCart(product: product)
             } label: {
                 addCartView
             }
@@ -143,7 +144,7 @@ struct ProductCell: View {
     }
     
     func decreaseCounter(){
-        if count != 0 {
+        if count != 1 {
             count -= 1
         }
     }

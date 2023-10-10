@@ -24,6 +24,11 @@ struct ProductsScreen: View {
                   message: Text(viewModel.errorMessage ?? "Somthing went wrong"),
                   dismissButton: .default(Text("OK")))
         }
+        .alert(isPresented: $viewModel.isProductAdded) {
+            Alert(title: Text("Add Product"),
+                  message: Text(viewModel.addMsg),
+                  dismissButton: .default(Text("OK")))
+        }
     }
     
     var headerToolbar: some View {
@@ -49,7 +54,7 @@ struct ProductsScreen: View {
     var productList: some View {
         ScrollView{
             ForEach(viewModel.mProducts,id: \.id) { position in
-                ProductCell(product: position)
+                ProductCell(vm: viewModel, product: position)
             }
         }
     }

@@ -11,12 +11,16 @@ class ProductsViewModel : ObservableObject {
     
     let repo = ProductRepo()
     
-    @Published var isLoading : Bool = false
-    @Published var isAlert : Bool = false
-    @Published var isSuccess : Bool = false
-    @Published var errorMessage : String? = nil
-    @Published var mProducts  = [ProductData]()
+    @Published var isLoading: Bool = false
+    @Published var isAlert: Bool = false
+    @Published var isSuccess: Bool = false
+    @Published var errorMessage: String? = nil
+    @Published var mProducts = [ProductData]()
     
+    // Cart
+    @Published var productsInCart: [ProductData] = []
+    @Published var isProductAdded: Bool = false
+    @Published var addMsg: String = ""
     
     init(){
         getProducts()
@@ -37,6 +41,19 @@ class ProductsViewModel : ObservableObject {
                 print(error)
             }
         }
+    }
+    func addToCart(product: ProductData) {
+        if !productsInCart.contains(where: { $0.id == product.id }) {
+            productsInCart.append(product)
+            showMessage("Product added to cart.")
+        } else {
+            showMessage("Product is already in the cart.")
+        }
+    }
+    
+    func showMessage(_ message: String) {
+        isProductAdded = true
+        addMsg = message
     }
     
     @MainActor
