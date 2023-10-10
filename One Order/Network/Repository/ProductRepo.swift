@@ -11,7 +11,9 @@ struct ProductRepo {
     
     let service = ApiService()
     
-    func getProducts(url: URLRequest?, completion: @escaping (Result<[ProductData], ApiError>) -> Void) {
-        service.fetch([ProductData].self, url: url, completion: completion)
+    func getProducts() async throws -> [ProductData] {
+        let request = ProductsAPIRequest()
+        return try await service.fetch(request)
     }
+    
 }

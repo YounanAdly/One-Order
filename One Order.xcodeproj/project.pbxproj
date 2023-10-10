@@ -20,6 +20,9 @@
 		150AC2512AD47F1C002BC419 /* ProductData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AC2502AD47F1C002BC419 /* ProductData.swift */; };
 		150AC2532AD480A8002BC419 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AC2522AD480A8002BC419 /* APIManager.swift */; };
 		150AC25A2AD48425002BC419 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150AC2592AD48425002BC419 /* ProductCell.swift */; };
+		155A4B082AD5E9A7007736AE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A4B072AD5E9A7007736AE /* HTTPMethod.swift */; };
+		155A4B0B2AD5EA1E007736AE /* ProductsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155A4B0A2AD5EA1E007736AE /* ProductsAPIRequest.swift */; };
+		15BFF6AD2AD534BD00C4DA1F /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15BFF6AC2AD534BD00C4DA1F /* APIRequest.swift */; };
 		15D8C8C72AD49D700004D910 /* ProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8C8C62AD49D700004D910 /* ProductsViewModel.swift */; };
 		15D8C8CA2AD4A1D50004D910 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 15D8C8C92AD4A1D50004D910 /* Kingfisher */; };
 /* End PBXBuildFile section */
@@ -58,6 +61,9 @@
 		150AC2502AD47F1C002BC419 /* ProductData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductData.swift; sourceTree = "<group>"; };
 		150AC2522AD480A8002BC419 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		150AC2592AD48425002BC419 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		155A4B072AD5E9A7007736AE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		155A4B0A2AD5EA1E007736AE /* ProductsAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsAPIRequest.swift; sourceTree = "<group>"; };
+		15BFF6AC2AD534BD00C4DA1F /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		15D8C8C62AD49D700004D910 /* ProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +154,7 @@
 			children = (
 				150AC24F2AD47EF5002BC419 /* Model */,
 				150AC24B2AD47DFC002BC419 /* Repository */,
+				155A4B092AD5EA11007736AE /* Service */,
 				150AC2462AD47C88002BC419 /* SharedService */,
 			);
 			path = Network;
@@ -168,6 +175,8 @@
 				150AC2472AD47CAF002BC419 /* ApiError.swift */,
 				150AC2492AD47CC1002BC419 /* ApiService.swift */,
 				150AC2522AD480A8002BC419 /* APIManager.swift */,
+				15BFF6AC2AD534BD00C4DA1F /* APIRequest.swift */,
+				155A4B072AD5E9A7007736AE /* HTTPMethod.swift */,
 			);
 			path = SharedService;
 			sourceTree = "<group>";
@@ -212,6 +221,14 @@
 				150AC2592AD48425002BC419 /* ProductCell.swift */,
 			);
 			path = cell;
+			sourceTree = "<group>";
+		};
+		155A4B092AD5EA11007736AE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				155A4B0A2AD5EA1E007736AE /* ProductsAPIRequest.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,11 +370,14 @@
 				150AC21D2AD47BF5002BC419 /* ProductsScreen.swift in Sources */,
 				150AC21B2AD47BF5002BC419 /* One_OrderApp.swift in Sources */,
 				150AC24A2AD47CC1002BC419 /* ApiService.swift in Sources */,
+				155A4B082AD5E9A7007736AE /* HTTPMethod.swift in Sources */,
 				150AC2482AD47CAF002BC419 /* ApiError.swift in Sources */,
 				150AC2532AD480A8002BC419 /* APIManager.swift in Sources */,
+				155A4B0B2AD5EA1E007736AE /* ProductsAPIRequest.swift in Sources */,
 				15D8C8C72AD49D700004D910 /* ProductsViewModel.swift in Sources */,
 				150AC25A2AD48425002BC419 /* ProductCell.swift in Sources */,
 				150AC24E2AD47E70002BC419 /* ProductRepo.swift in Sources */,
+				15BFF6AD2AD534BD00C4DA1F /* APIRequest.swift in Sources */,
 				150AC2512AD47F1C002BC419 /* ProductData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

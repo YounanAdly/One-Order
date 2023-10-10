@@ -12,9 +12,9 @@ class APIManager {
     
     private init() {}
     
-    private let baseURL = "https://fakestoreapi.com"
+    let baseURL = "https://fakestoreapi.com/"
     
-    func getProducts() -> String{
-        return "\(baseURL)/products"
+    func getProducts() -> String {
+        return "products"
     }
 }

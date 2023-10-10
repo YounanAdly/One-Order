@@ -18,45 +18,39 @@ class ProductsViewModel : ObservableObject {
     @Published var mProducts  = [ProductData]()
     
     
-    init(){getProducts()}
+    init(){
+        getProducts()
+    }
+    
     
     func getProducts() {
-        
         isLoading = true
         errorMessage = nil
         
-        repo.getProducts(url: getProductsRequest()) { [weak self] result in
-            
-            DispatchQueue.main.async {
-                self?.isLoading = false
-                self?.isAlert = false
-                self?.isSuccess = false
-                
-                switch result {
-                case .failure(let error):
-                    self?.isAlert = true
-                    self?.errorMessage = error.localizedDescription
-                    print(error)
-                case .success(let response):
-                    self?.isSuccess = true
-                    self?.mProducts = response
-                    print("Products===== \(response)")
-                }
+        Task {
+            do {
+                let response = try await repo.getProducts()
+                await updateUI(products: response)
+                print("Products: \(response)")
+            } catch {
+                await errorUpdateUI(error: error)
+                print(error)
             }
         }
     }
     
-    
-    
-    
-    func getProductsRequest()  -> URLRequest {
-        isLoading = true
-        
-        let url = URL(string: APIManager.shared.getProducts())!
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        return request
+    @MainActor
+    func updateUI(products: [ProductData]) {
+        isLoading = false
+        isSuccess = true
+        mProducts = products
     }
     
-    
+    @MainActor
+    func errorUpdateUI(error : Error){
+        isLoading = false
+        isAlert = true
+        errorMessage = error.localizedDescription
+    }
 }
+
